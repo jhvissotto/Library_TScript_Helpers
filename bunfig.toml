@@ -1,0 +1,6 @@
+[install]
+path = ["src"]
+
+[alias]
+"tscript-helpers" = "./src"
+"tscript-helpers/*" = "./src/*"
