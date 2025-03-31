@@ -3,7 +3,7 @@
 
 ### bool
 
-```Typescript
+```ts
 import { bool } from 'tscript-helpers/utils'
 
 bool([]) == true
@@ -13,7 +13,7 @@ bool({}) == true
 
 ### Counter
 
-```Typescript
+```ts
 import { Counter } from 'tscript-helpers/utils'
 
 const { getValue, increment, decrement, reset } = new Counter({ initial:0 })
@@ -22,7 +22,7 @@ const { getValue, increment, decrement, reset } = new Counter({ initial:0 })
 
 ### Paginator
 
-```Typescript
+```ts
 import { Paginator } from 'tscript-helpers/utils'
 
 const { pagination } = Paginator()
@@ -40,12 +40,12 @@ const feat = TRPC.procedure.input(zod.object({
 ```
 
 
-
 # 2) Hooks
+
 
 ### useCounter
 
-```Typescript
+```ts
 import { useCounter } from 'tscript-helpers/hooks'
 
 const { value, setValue, reset, increment, decrement } = useCounter({ initial: 0 })
@@ -54,10 +54,27 @@ const { value, setValue, reset, increment, decrement } = useCounter({ initial: 0
 
 ### usePersistedState
 
-```Typescript
+```ts
 import { usePersistedState } from 'tscript-helpers/hooks'
 
 const { data, isLoading } = TRPCNext.feature.useQuery()
 
 const [ data2, __ ] = usePersistedState(data, [])
+```
+
+
+# 3) JSX
+
+
+### If
+
+```jsx
+import { If } from 'tscript-helpers/JSX'
+
+const Component = () => (
+    <>
+        <If cond={true} > <p>Render</p>   </If>
+        <If cond={false}> <p>Disabled</p> </If>
+    </>
+)
 ```
