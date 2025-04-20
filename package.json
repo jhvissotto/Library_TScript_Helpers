@@ -1,10 +1,11 @@
 {
   "name": "tscript-helpers",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Library TScript Helpers",
   "type": "module",
-  "main": "index.ts",
-  "module": "index.ts",
+  "main": "./dist/index.ts",
+  "module": "./dist/index.ts",
+  "types": "./dist/index.d.ts", 
   "exports": {
     ".":        "./dist/index.ts",
     "./hooks":  "./dist/hooks/index.ts",
