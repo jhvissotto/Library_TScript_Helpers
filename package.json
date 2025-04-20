@@ -1,6 +1,6 @@
 {
   "name": "tscript-helpers",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Library TScript Helpers",
   "type": "module",
   "main": "index.ts",

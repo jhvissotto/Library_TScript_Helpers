@@ -1,5 +1,4 @@
-# 1) Utilities
-
+# Utilities
 
 ### bool
 
@@ -40,8 +39,30 @@ const feat = TRPC.procedure.input(zod.object({
 ```
 
 
-# 2) Hooks
 
+# SQL Queries
+
+### SELECT
+
+```ts
+import { SELECT } from 'tscript-helpers/SQL'
+
+const QUERY = SELECT(['*'], 'Table', { orderby:[['ColA','ASC']], limit:10, offset:10 })
+
+console.log('>> QUERY:', QUERY)
+```
+```
+>> QUERY:
+SELECT *
+FROM Table
+ORDER BY ColA ASC
+LIMIT 10
+OFFSET 10
+```
+
+
+
+# Hooks
 
 ### useCounter
 
@@ -63,8 +84,8 @@ const [ data2, __ ] = usePersistedState(data, [])
 ```
 
 
-# 3) JSX
 
+# JSX
 
 ### If
 
