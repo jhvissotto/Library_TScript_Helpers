@@ -9,10 +9,8 @@
     "allowJs": true,
 
     // Bundler mode
-    // "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
 
     // Best practices
     "strict": true,
@@ -25,11 +23,20 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
 
-
-    "moduleResolution": "node",
-    "baseUrl": "./",
+    // TypeScript Compilation Settings
+    "moduleResolution": "node",  // Make sure module resolution is correct
+    "baseUrl": "./",  // Base directory for imports
     "paths": {
       "library_helpers_tscript/*": ["src/*"]
-    }
-  }
+    },
+
+    // **NEW SETTINGS FOR GENERATING .d.ts FILES**
+    "declaration": true,          // Enable .d.ts file generation
+    "declarationDir": "./dist",   // Directory to output .d.ts files
+    "outDir": "./dist",           // Output directory for compiled .js and .d.ts files
+    "noEmit": false               // Allow emitting files
+  },
+  "include": [
+    "src/**/*"  // Make sure to include your source directory
+  ]
 }
