@@ -1,10 +1,16 @@
 {
   "name": "tscript-helpers",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Library TScript Helpers",
   "type": "module",
   "main": "index.ts",
   "module": "index.ts",
+  "exports": {
+    "./hooks":  "./hooks/index.ts",
+    "./JSX":    "./JSX/index.ts",
+    "./utils":  "./utils/index.ts",
+    "./SQL":    "./SQL/index.ts"
+  },
   "dependencies": {
     "bun-types": "^1.2.7",
     "csstype": "^3.1.3",
