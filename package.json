@@ -1,9 +1,20 @@
 {
     "name": "tscript-helpers",
-    "version": "1.0.15",
     "description": "TScript Helpers Library",
+    "version": "1.0.16",
+    
     "author": "Jose Henrique V.",
     "license": "ISC",
+    
+    "homepage": "https://github.com/jhvissotto/Library_TScript_Helpers#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jhvissotto/Library_TScript_Helpers.git"
+    },
+    "bugs": { 
+        "url": "https://github.com/jhvissotto/Library_TScript_Helpers/issues"
+    },
+
     "type": "module",
     "main":   "index.js",
     "module": "index.ts",
