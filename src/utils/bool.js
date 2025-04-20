@@ -1,4 +1,7 @@
-export function bool(x) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bool = bool;
+function bool(x) {
     if (Array.isArray(x)) {
         return Boolean(x.length);
     }

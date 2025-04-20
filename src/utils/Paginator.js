@@ -1,4 +1,7 @@
-export function Paginator(initialPage = 1) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Paginator = Paginator;
+function Paginator(initialPage = 1) {
     function calcPrisma(limit, pageCursor) {
         return {
             skip: limit * (pageCursor - 1),

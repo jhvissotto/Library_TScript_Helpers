@@ -1,3 +1,4 @@
 node_modules
+OLD
 bun.lock
-tsconfig.tsbuildinfo
+package-lock.json
