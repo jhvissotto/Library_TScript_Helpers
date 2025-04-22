@@ -1,7 +1,7 @@
 {
     "name": "tscript-helpers",
     "description": "TScript Helpers Library",
-    "version": "1.0.23",
+    "version": "1.0.24",
     
     "author": "Jose Henrique V.",
     "license": "ISC",
@@ -19,7 +19,7 @@
     "module":   "index.ts",
     "main":     "./dist/index.js",
     "exports": {
-        ".":        "./dist/index.js",
+        ".":        "./dist/src/index.js",
         "./hooks":  "./dist/src/hooks/index.js",
         "./JSX":    "./dist/src/JSX/index.js",
         "./SQL":    "./dist/src/SQL/index.js",
