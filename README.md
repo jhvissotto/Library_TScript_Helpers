@@ -47,7 +47,7 @@ const feat = TRPC.procedure.input(zod.object({
 ```ts
 import { SELECT } from 'tscript-helpers/SQL'
 
-const QUERY = SELECT(['*'], 'Table', { orderby:[['ColA','ASC']], limit:10, offset:10 })
+const QUERY = SELECT(['*'], 'Table', { where:'ColA = 123', orderby:['RAND()'], limit:10, offset:10 })
 
 console.log('>> QUERY:', QUERY)
 ```
@@ -55,7 +55,8 @@ console.log('>> QUERY:', QUERY)
 >> QUERY:
 SELECT *
 FROM Table
-ORDER BY ColA ASC
+WHERE ColA = 123
+ORDER BY RAND()
 LIMIT 10
 OFFSET 10
 ```
