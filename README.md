@@ -21,7 +21,7 @@ compact(100)  // 100
 compact(1000) //   1K
 compact(1025) //   1K
 compact(1075) // 1.1K
-compact(1250) // 1.2K
+compact(1250) // 1.3K
 compact(1500) // 1.5K
 
 compact(10_000)  //  10K
