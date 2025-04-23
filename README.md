@@ -10,6 +10,26 @@ bool({}) == true
 ```
 
 
+### Compact
+
+```ts
+import { compact } from 'tscript-helpers/utils'
+
+compact(-10)  // -10
+compact(100)  // 100
+
+compact(1000) //   1K
+compact(1025) //   1K
+compact(1075) // 1.1K
+compact(1250) // 1.2K
+compact(1500) // 1.5K
+
+compact(10_000)  //  10K
+compact(123_000) // 120K
+compact(125_000) // 130K
+```
+
+
 ### Counter
 
 ```ts
