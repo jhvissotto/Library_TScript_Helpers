@@ -62,8 +62,8 @@ const feat = TRPC.procedure.input(zod.object({
 import { optional_call } from 'tscript-helpers/utils'
 
 let pipe
-pipe = optional_call(pipe, 'modifier' arg)       // pipe = pipe.modifier(arg)
-pipe = optional_call(pipe, 'modifier' undefined) // pipe = pipe
+pipe = optional_call(pipe, 'modifier', arg)       // pipe = pipe.modifier(arg)
+pipe = optional_call(pipe, 'modifier', undefined) // pipe = pipe
 ```
 
 
