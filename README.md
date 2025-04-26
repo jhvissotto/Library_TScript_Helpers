@@ -1,7 +1,6 @@
 # Utilities
 
 ### bool
-
 ```ts
 import { bool } from 'tscript-helpers/utils'
 
@@ -11,7 +10,6 @@ bool({}) == true
 
 
 ### Compact
-
 ```ts
 import { compact } from 'tscript-helpers/utils'
 
@@ -31,7 +29,6 @@ compact(125_000) // 130K
 
 
 ### Counter
-
 ```ts
 import { Counter } from 'tscript-helpers/utils'
 
@@ -40,7 +37,6 @@ const { getValue, increment, decrement, reset } = new Counter({ initial:0 })
 
 
 ### Paginator
-
 ```ts
 import { Paginator } from 'tscript-helpers/utils'
 
@@ -58,6 +54,8 @@ const feat = TRPC.procedure.input(zod.object({
 })
 ```
 
+
+### Optional Call
 ```ts
 import { optional_call } from 'tscript-helpers/utils'
 
@@ -67,10 +65,10 @@ pipe = optional_call(pipe, 'modifier', undefined) // pipe = pipe
 ```
 
 
+
 # SQL Queries
 
 ### SELECT
-
 ```ts
 import { SELECT } from 'tscript-helpers/SQL'
 
@@ -93,7 +91,6 @@ OFFSET 10
 # Hooks
 
 ### useCounter
-
 ```ts
 import { useCounter } from 'tscript-helpers/hooks'
 
@@ -102,7 +99,6 @@ const { value, setValue, reset, increment, decrement } = useCounter({ initial: 0
 
 
 ### usePersistedState
-
 ```ts
 import { usePersistedState } from 'tscript-helpers/hooks'
 
@@ -116,7 +112,6 @@ const [ data2, __ ] = usePersistedState(data, [])
 # JSX
 
 ### If
-
 ```jsx
 import { If } from 'tscript-helpers/JSX'
 
