@@ -65,6 +65,26 @@ pipe = optional_call(pipe, 'modifier', undefined) // pipe = pipe
 ```
 
 
+### Stingify
+```ts
+import { stringify } from 'tscript-helpers/utils'
+
+stringify(['https://domain.com', 'endpoint', 'ID'], { abc:123, def:456 }) // https://domain.com/endpoint/ID?abc=123&def=456 
+```
+```ts
+// no black box definition
+function stringify(left:string[], right:Record<string, undefined|null|boolean|number|string>) {
+    return [
+        left.join('/'), 
+        Object
+            .entries(right)
+            .filter(([k, v]) => (k != '') && (v != undefined))
+            .map(([k, v]) => k+'='+v)
+            .join('&')
+    ].join('?')
+}
+```
+
 
 # SQL Queries
 
