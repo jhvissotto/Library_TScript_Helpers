@@ -8,16 +8,51 @@ bool([]) == true
 bool({}) == true
 ```
 
-### Cast To Bool
+### Cast
+```ts
+import { cast } from 'tscript-helpers/utils'
+
+cast.toBool() // cast to boolean
+cast.asBool() // cast to boolean or undefined
+
+
+cast.toBool('yes', { extend:false }) // true
+cast.toBool('no',  { extend:false }) // false
+
+cast.toBool('none', { extend:true  }) // false
+cast.toBool('none', { extend:false }) // Error
+
+cast.asBool('abc123', { extend:false, undefine:true  }) // undefined
+cast.asBool('abc123', { extend:false, undefine:false }) // Error
+```
+
 ```ts
 // no black box definition
-function castToBool(x:undefined|null|boolean|number|string, coerce=false): boolean {
+function toBool(x:undefined|null|boolean|number|string, props:{ force:boolean }) {
+    
+    if (['true','1','t','y','yes'].includes(String(x).toLowerCase())) return true
+    if (['false','0','f','n','no'].includes(String(x).toLowerCase())) return false
+    
+    if (props.force) {
+        if (['undefined','null','none','nan',''].includes(String(x).toLowerCase())) return false
+    }
+
+    throw new Error('BOOLEAN_CASTING_FAILED')
+}
+```
+```ts
+// no black box definition
+function asBool(x:undefined|null|boolean|number|string, props:{ extend:boolean, undefine:boolean }) {
 
     if (['true','1','t','y','yes'].includes(String(x).toLowerCase())) return true
     if (['false','0','f','n','no'].includes(String(x).toLowerCase())) return false
     
-    if (coerce) {
-        if (['undefined','null','none','nan'].includes(String(x).toLowerCase())) return false
+    if (props.extend) {
+        if (['undefined','null','none','nan',''].includes(String(x).toLowerCase())) return false
+    }
+
+    if (props.undefine) {
+        return undefined
     }
 
     throw new Error('BOOLEAN_CASTING_FAILED')
