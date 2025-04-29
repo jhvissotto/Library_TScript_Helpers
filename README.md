@@ -73,15 +73,15 @@ stringify(['https://domain.com', 'endpoint', 'ID'], { abc:123, def:456 }) // htt
 ```
 ```ts
 // no black box definition
-function stringify(left:string[], right:Record<string, undefined|null|boolean|number|string>) {
+export function stringify(left:string[], right:Record<string, undefined|null|boolean|number|string>) {
     return [
-        left.join('/'), 
+        left.filter(Boolean).join('/'), 
         Object
             .entries(right)
             .filter(([k, v]) => (k != '') && (v != undefined))
             .map(([k, v]) => k+'='+v)
-            .join('&')
-    ].join('?')
+            .filter(Boolean).join('&')
+    ].filter(Boolean).join('?')
 }
 ```
 
