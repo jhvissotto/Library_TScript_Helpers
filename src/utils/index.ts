@@ -1,4 +1,5 @@
 export * from './bool'
+export * from './castToBool'
 export * from './compact'
 export * from './Counter'
 export * from './Paginator'
